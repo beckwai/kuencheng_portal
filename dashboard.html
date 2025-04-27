@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuen Cheng Portal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="theme-style">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/logo.png" alt="Logo" class="sidebar-logo">
+            <span>Kuen Cheng Portal</span>
+            <button id="toggleSidebar"><i class="fas fa-chevron-left"></i></button>
+        </div>
+        <nav>
+            <ul>
+                <li class="active"><a href="dashboard.html"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                <li><a href="events.html"><i class="fas fa-calendar-alt"></i> <span>Events</span></a></li>
+                <li><a href="resources.html"><i class="fas fa-book"></i> <span>Resources</span></a></li>
+                <li><a href="students.html"><i class="fas fa-user-graduate"></i> <span>Students</span></a></li>
+                <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> <span>Teachers</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <button id="toggleDarkMode">
+                <i class="fas fa-moon"></i> <span>Dark Mode</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Welcome, <span id="userName">Teacher</span>!</h1>
+            <div class="header-actions">
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <div class="user-dropdown">
+                    <img src="images/avatar.jpg" alt="User">
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-grid">
+            <!-- Announcements -->
+            <section class="announcements card">
+                <h2><i class="fas fa-bullhorn"></i> Announcements</h2>
+                <div class="announcement-item">
+                    <div class="announcement-badge urgent">URGENT</div>
+                    <h3>Mid-Year Exam Schedule Released</h3>
+                    <p>Please check the updated exam timetable for May 2024.</p>
+                    <small>Posted: 2 hours ago</small>
+                </div>
+                <div class="announcement-item">
+                    <h3>Sports Day Postponed</h3>
+                    <p>Due to weather conditions, Sports Day is rescheduled to June 10.</p>
+                    <small>Posted: 1 day ago</small>
+                </div>
+            </section>
+
+            <!-- Quick Links -->
+            <section class="quick-links card">
+                <h2><i class="fas fa-link"></i> Quick Links</h2>
+                <div class="links-grid">
+                    <a href="resources.html?filter=textbooks" class="link-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Textbooks</span>
+                    </a>
+                    <a href="events.html" class="link-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>School Calendar</span>
+                    </a>
+                    <a href="students.html" class="link-item">
+                        <i class="fas fa-users"></i>
+                        <span>Student Directory</span>
+                    </a>
+                    <a href="teachers.html" class="link-item">
+                        <i class="fas fa-chalkboard"></i>
+                        <span>Teacher Contacts</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+id="widget-container"
+new Sortable(document.getElementById('widget-container'), {
+  animation: 150,
+  handle: '.widget-header' // Drag by header
+});
+
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

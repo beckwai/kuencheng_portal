@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students - Kuen Cheng Portal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="theme-style">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/logo.png" class="sidebar-logo">
+            <span>Kuen Cheng</span>
+            <button id="toggleSidebar"><i class="fas fa-chevron-left"></i></button>
+        </div>
+        
+        <nav>
+            <a href="dashboard.html"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+            <a href="events.html"><i class="fas fa-calendar"></i> <span>Events</span></a>
+            <a href="resources.html"><i class="fas fa-book"></i> <span>Resources</span></a>
+            <a href="students.html" class="active"><i class="fas fa-users"></i> <span>Students</span></a>
+            <a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> <span>Teachers</span></a>
+        </nav>
+        
+        <button id="themeToggle"><i class="fas fa-moon"></i> <span>Dark Mode</span></button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Student <span>Management</span></h1>
+            <div class="user-menu">
+                <div class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">2</span>
+                </div>
+                <img src="images/avatar.jpg" alt="User" class="user-avatar">
+            </div>
+        </header>
+        
+        <div class="students-container">
+            <!-- Student Search and Filters -->
+            <div class="student-toolbar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search students...">
+                </div>
+                <div class="filters">
+                    <select id="classFilter">
+                        <option value="all">All Classes</option>
+                        <option value="form1">Form 1</option>
+                        <option value="form2">Form 2</option>
+                        <option value="form3">Form 3</option>
+                        <option value="form4">Form 4</option>
+                        <option value="form5">Form 5</option>
+                    </select>
+                    <select id="houseFilter">
+                        <option value="all">All Houses</option>
+                        <option value="red">Red House</option>
+                        <option value="blue">Blue House</option>
+                        <option value="green">Green House</option>
+                        <option value="yellow">Yellow House</option>
+                    </select>
+                </div>
+                <button class="add-student-btn"><i class="fas fa-plus"></i> Add Student</button>
+            </div>
+            
+            <!-- Student Table -->
+            <div class="student-table-container">
+                <table class="student-table">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>House</th>
+                            <th>Attendance</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>KC2024001</td>
+                            <td>
+                                <div class="student-info">
+                                    <img src="images/avatar.jpg" class="student-avatar">
+                                    <span>Tan Wei Ling</span>
+                                </div>
+                            </td>
+                            <td>Form 5A</td>
+                            <td><span class="house-tag red">Red</span></td>
+                            <td><div class="attendance-progress" style="--progress: 95%"></div></td>
+                            <td>
+                                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>KC2024002</td>
+                            <td>
+                                <div class="student-info">
+                                    <img src="images/avatar.jpg" class="student-avatar">
+                                    <span>Mohd Ali bin Ahmad</span>
+                                </div>
+                            </td>
+                            <td>Form 4B</td>
+                            <td><span class="house-tag blue">Blue</span></td>
+                            <td><div class="attendance-progress" style="--progress: 88%"></div></td>
+                            <td>
+                                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>KC2024003</td>
+                            <td>
+                                <div class="student-info">
+                                    <img src="images/avatar.jpg" class="student-avatar">
+                                    <span>Priya a/p Rajan</span>
+                                </div>
+                            </td>
+                            <td>Form 3C</td>
+                            <td><span class="house-tag green">Green</span></td>
+                            <td><div class="attendance-progress" style="--progress: 92%"></div></td>
+                            <td>
+                                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Student Statistics -->
+            <div class="student-stats">
+                <div class="stat-card">
+                    <h3>Total Students</h3>
+                    <div class="stat-value">1,248</div>
+                    <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 5% from last year</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Average Attendance</h3>
+                    <div class="stat-value">93.5%</div>
+                    <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 1.2% from last month</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Top Performing Class</h3>
+                    <div class="stat-value">Form 5A</div>
+                    <div class="stat-trend">96.2% average</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+    <script src="js/students.js"></script>
+</body>
+</html>

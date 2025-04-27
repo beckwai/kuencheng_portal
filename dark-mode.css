@@ -1,0 +1,32 @@
+:root {
+    --primary: #3a86ff;
+    --secondary: #ff006e;
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #f0f0f0;
+    --text-light: #aaaaaa;
+}
+
+body {
+    color-scheme: dark;
+}
+
+.sidebar {
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.card {
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.countdown-item {
+    background: rgba(255,255,255,0.05);
+}
+
+.sidebar nav a:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+#themeToggle:hover {
+    background: rgba(255,255,255,0.05);
+}

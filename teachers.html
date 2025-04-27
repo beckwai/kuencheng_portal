@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers - Kuen Cheng Portal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="theme-style">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Add Teacher Modal -->
+    <div class="modal" id="addTeacherModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Teacher</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="teacherForm">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="teacherName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="teacherEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <select id="teacherSubject" required>
+                            <option value="">Select Subject</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Science">Science</option>
+                            <option value="English">English</option>
+                            <option value="History">History</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Classes</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="teacherClasses" value="Form 1"> Form 1</label>
+                            <label><input type="checkbox" name="teacherClasses" value="Form 2"> Form 2</label>
+                            <label><input type="checkbox" name="teacherClasses" value="Form 3"> Form 3</label>
+                            <label><input type="checkbox" name="teacherClasses" value="Form 4"> Form 4</label>
+                            <label><input type="checkbox" name="teacherClasses" value="Form 5"> Form 5</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Profile Photo</label>
+                        <input type="file" id="teacherPhoto" accept="image/*">
+                    </div>
+                    <button type="submit" class="submit-btn">Add Teacher</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/logo.png" class="sidebar-logo">
+            <span>Kuen Cheng</span>
+            <button id="toggleSidebar"><i class="fas fa-chevron-left"></i></button>
+        </div>
+        
+        <nav>
+            <a href="dashboard.html"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+            <a href="events.html"><i class="fas fa-calendar"></i> <span>Events</span></a>
+            <a href="resources.html"><i class="fas fa-book"></i> <span>Resources</span></a>
+            <a href="students.html"><i class="fas fa-users"></i> <span>Students</span></a>
+            <a href="teachers.html" class="active"><i class="fas fa-chalkboard-teacher"></i> <span>Teachers</span></a>
+        </nav>
+        
+        <button id="themeToggle"><i class="fas fa-moon"></i> <span>Dark Mode</span></button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Teacher <span>Management</span></h1>
+            <div class="user-menu">
+                <div class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">1</span>
+                </div>
+                <img src="images/avatar.jpg" alt="User" class="user-avatar">
+            </div>
+        </header>
+        
+        <div class="teachers-container">
+            <!-- Teacher Tools -->
+            <div class="teacher-tools">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search teachers..." id="teacherSearch">
+                </div>
+                <div class="button-group">
+                    <button class="btn primary" id="addTeacherBtn"><i class="fas fa-plus"></i> Add Teacher</button>
+                    <button class="btn secondary" id="exportTeachers"><i class="fas fa-file-export"></i> Export</button>
+                </div>
+            </div>
+            
+            <!-- Teacher Cards Container -->
+            <div class="teacher-grid" id="teacherGrid">
+                <!-- Teacher cards will be added dynamically -->
+            </div>
+            
+            <!-- Timetable Section -->
+            <div class="timetable-section">
+                <h2><i class="fas fa-calendar-alt"></i> Teacher Timetable</h2>
+                <div class="timetable-controls">
+                    <select id="teacherSelect">
+                        <option value="">Select Teacher</option>
+                    </select>
+                    <select id="weekSelect">
+                        <option>Current Week</option>
+                        <option>Next Week</option>
+                    </select>
+                </div>
+                <div class="timetable-grid">
+                    <div class="timetable-header">
+                        <div>Time</div>
+                        <div>Monday</div>
+                        <div>Tuesday</div>
+                        <div>Wednesday</div>
+                        <div>Thursday</div>
+                        <div>Friday</div>
+                    </div>
+                    <div class="timetable-rows" id="timetableRows">
+                        <!-- Timetable rows will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+    <script src="js/teachers.js"></script>
+</body>
+</html>

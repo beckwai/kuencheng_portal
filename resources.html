@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Kuen Cheng Portal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="theme-style">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/logo.png" class="sidebar-logo">
+            <span>Kuen Cheng</span>
+            <button id="toggleSidebar"><i class="fas fa-chevron-left"></i></button>
+        </div>
+        
+        <nav>
+            <a href="dashboard.html"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+            <a href="events.html"><i class="fas fa-calendar"></i> <span>Events</span></a>
+            <a href="resources.html" class="active"><i class="fas fa-book"></i> <span>Resources</span></a>
+            <a href="students.html"><i class="fas fa-users"></i> <span>Students</span></a>
+            <a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> <span>Teachers</span></a>
+        </nav>
+        
+        <button id="themeToggle"><i class="fas fa-moon"></i> <span>Dark Mode</span></button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>School <span>Resources</span></h1>
+            <div class="user-menu">
+                <div class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">2</span>
+                </div>
+                <img src="images/avatar.jpg" alt="User" class="user-avatar">
+            </div>
+        </header>
+        
+        <div class="resources-container">
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search resources..." id="resourceSearch">
+                <select id="resourceCategory">
+                    <option value="all">All Categories</option>
+                    <option value="textbooks">Textbooks</option>
+                    <option value="papers">Past Papers</option>
+                    <option value="guides">Study Guides</option>
+                    <option value="videos">Videos</option>
+                </select>
+            </div>
+            
+            <!-- Resource Categories -->
+            <div class="resource-categories">
+                <div class="category-card" onclick="filterResources('textbooks')">
+                    <div class="category-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Textbooks</h3>
+                    <p>Digital versions of all course textbooks</p>
+                </div>
+                
+                <div class="category-card" onclick="filterResources('papers')">
+                    <div class="category-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Past Papers</h3>
+                    <p>Previous exam papers with solutions</p>
+                </div>
+                
+                <div class="category-card" onclick="filterResources('guides')">
+                    <div class="category-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Study Guides</h3>
+                    <p>Subject-specific study materials</p>
+                </div>
+                
+                <div class="category-card" onclick="filterResources('videos')">
+                    <div class="category-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Lessons</h3>
+                    <p>Recorded lectures and tutorials</p>
+                </div>
+            </div>
+            
+            <!-- Resources Grid -->
+            <div class="resources-grid">
+                <h2 class="section-title">All Resources</h2>
+                
+                <div class="resource-card textbook">
+                    <div class="resource-header">
+                        <span class="resource-type textbook"><i class="fas fa-book"></i> Textbook</span>
+                        <span class="resource-date">Updated: 15 Jan 2024</span>
+                    </div>
+                    <h3>Mathematics Form 4</h3>
+                    <p>Complete digital textbook for Form 4 Mathematics curriculum</p>
+                    <div class="resource-footer">
+                        <span class="resource-subject">Mathematics</span>
+                        <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card paper">
+                    <div class="resource-header">
+                        <span class="resource-type paper"><i class="fas fa-file-alt"></i> Past Paper</span>
+                        <span class="resource-date">2023 Exam</span>
+                    </div>
+                    <h3>Physics Mid-Year Exam 2023</h3>
+                    <p>Complete question paper with marking scheme</p>
+                    <div class="resource-footer">
+                        <span class="resource-subject">Physics</span>
+                        <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card video">
+                    <div class="resource-header">
+                        <span class="resource-type video"><i class="fas fa-video"></i> Video</span>
+                        <span class="resource-date">45 min</span>
+                    </div>
+                    <h3>Chemistry: Organic Compounds</h3>
+                    <p>Complete tutorial on naming organic compounds</p>
+                    <div class="resource-footer">
+                        <span class="resource-subject">Chemistry</span>
+                        <a href="#" class="view-btn"><i class="fas fa-play"></i> Watch</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card guide">
+                    <div class="resource-header">
+                        <span class="resource-type guide"><i class="fas fa-lightbulb"></i> Study Guide</span>
+                        <span class="resource-date">25 Pages</span>
+                    </div>
+                    <h3>Biology Revision Notes</h3>
+                    <p>Condensed notes for Form 5 Biology final exam</p>
+                    <div class="resource-footer">
+                        <span class="resource-subject">Biology</span>
+                        <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+    <script src="js/resources.js"></script>
+</body>
+</html>
